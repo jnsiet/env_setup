@@ -8,3 +8,17 @@ function check_distro() {
         exit 1
     fi
 }
+
+function recommend_reboot() {
+    echo "WARNING: It is recommended to reboot your computer now, or if you prefer, you can do so later."
+    read -r -p "Do you want to reboot your computer now? [Y/n] " reboot_machine
+    while [[ ! "$reboot_machine" =~ ^([yY][eE][sS]|[yY]|[nN][oO]|[nN])$ ]]; do
+        echo "Invalid input. Please enter 'Y' or 'n'."
+        read -r -p "Do you want to reboot your computer now? [Y/n] " reboot_machine
+    done
+    if [[ "$reboot_machine" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	    sudo shutdown -r now
+    else
+	    exit 0
+    fi
+}
