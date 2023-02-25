@@ -11,12 +11,12 @@ function check_distro() {
 
 function display_warning() {
     echo "WARNING: By proceeding with the execution of the script, unwanted changes may be made to your machine."
-    read -r -p "Do you want to continue? [Y/n] " continue
-    while [[ ! "$continue" =~ ^([yY][eE][sS]|[yY]|[nN][oO]|[nN])$ ]]; do
+    read -r -p "Do you want to continue? [Y/n] " confirm
+    while [[ ! "$confirm" =~ ^([yY][eE][sS]|[yY]|[nN][oO]|[nN])$ ]]; do
         echo "Invalid input. Please enter 'Y' or 'n'."
-        read -r -p "Do you want to continue? [Y/n] " continue
+        read -r -p "Do you want to continue? [Y/n] " confirm
     done
-    if [[ "$continue" =~ ^([nN][oO]|[nN])$ ]]; then
+    if [[ "$confirm" =~ ^([nN][oO]|[nN])$ ]]; then
 	    echo "bye!"
 	    exit 0
     fi
