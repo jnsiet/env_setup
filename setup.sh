@@ -9,6 +9,19 @@ function check_distro() {
     fi
 }
 
+function display_warning() {
+    echo "WARNING: By proceeding with the execution of the script, unwanted changes may be made to your machine."
+    read -r -p "Do you want to continue? [Y/n] " continue
+    while [[ ! "$continue" =~ ^([yY][eE][sS]|[yY]|[nN][oO]|[nN])$ ]]; do
+        echo "Invalid input. Please enter 'Y' or 'n'."
+        read -r -p "Do you want to continue? [Y/n] " continue
+    done
+    if [[ "$continue" =~ ^([nN][oO]|[nN])$ ]]; then
+	    echo "bye!"
+	    exit 0
+    fi
+}
+
 function recommend_reboot() {
     echo "WARNING: It is recommended to reboot your computer now, or if you prefer, you can do so later."
     read -r -p "Do you want to reboot your computer now? [Y/n] " reboot_machine
@@ -22,3 +35,5 @@ function recommend_reboot() {
 	    exit 0
     fi
 }
+
+display_warning
