@@ -9,6 +9,34 @@ function check_distro() {
     fi
 }
 
+check_distro
+
+echo "                                                    __ ";
+echo " _____     _ _        _ _ _     _                  |  |";
+echo "|  |  |___| | |___   | | | |___| |___ ___ _____ ___|  |";
+echo "|     | -_| | | . |  | | | | -_| |  _| . |     | -_|__|";
+echo "|__|__|___|_|_|___|  |_____|___|_|___|___|_|_|_|___|__|";
+echo "                                                       ";
+
+echo "               ,      \    /      ,               ";
+echo "              / \     )\__/(     / \              ";
+echo "             /   \   (_\  /_)   /   \             ";
+echo " ___________/_____\___\@  @/___/_____\___________ ";
+echo "|                     |\../|                     |";
+echo "|                      \VV/                      |";
+echo "|      This script automates the process of      |";
+echo "|  configuring the Linux Mint 21.1 environment   |";
+echo "|     after clean installation of the system.    |";
+echo "|       https://github.com/jnsiet/env_setup      |";
+echo "|             ~ Created by @jnsiet ~             |";
+echo "|________________________________________________|";
+echo " |    /\ /              \\\              \ /\    |";
+echo " |  /   V                ))              V   \  | ";
+echo " |/     \`               //               ´     \|";
+echo " \`                     //                       ´";
+echo "                       V                          ";
+echo "                                                  ";
+
 function display_warning() {
     echo "WARNING: By proceeding with the execution of the script, unwanted changes may be made to your machine."
     read -r -p "Do you want to continue? [Y/n] " confirm
@@ -37,3 +65,4 @@ function recommend_reboot() {
 }
 
 display_warning
+recommend_reboot
